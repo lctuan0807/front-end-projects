@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    //Navigation
+    $('.nav-main .nav-block .menu-item a').hover(function() {
+        $(this).parent().toggleClass('menu-active');
+    })
+
+    //Slide
     var bannerSlide = new Swiper('.slide .swiper-container', {
         pagination: {
             el: '.swiper-pagination',
@@ -41,13 +47,23 @@ $(document).ready(function() {
         }
     })
 
+    //DatePicker
+    $(function() {
+        $('.datepicker').datepicker();
+
+    });
+
     //Figure Hover
     $('.figure').hover(function() {
         $(this).toggleClass('active');
         // /$(this).children('.figcaption').toggleClass('animated').toggleClass('zoomIn');
     })
 
-    //Quotes Slide
+    //Stretcher Hover
+    $('.stretcher-item').hover(function() {
+            $(this).toggleClass('active').css('transition', 'all .5s ease-in-out');
+        })
+        //Quotes Slide
     var quotesSlide = new Swiper('.quotes .swiper-container', {
         autoplay: {
             delay: 3000,
@@ -74,4 +90,17 @@ $(document).ready(function() {
             }
         }
     })
+
+    //Scroll to top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 400) {
+            $('#toTop').fadeIn();
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
+    $('#toTop').click(function() {
+        $(window).scrollTop(0);
+    })
+
 })
