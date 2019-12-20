@@ -1,0 +1,40 @@
+.title {
+    padding: 0 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    @include text(24px, 2.5625rem, $icon-color);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    &:after {
+        content: '';
+        border-bottom: 2px solid $icon-color;
+        width: 50px;
+        margin: 0 auto;
+        margin-top: 20px;
+        position: absolute;
+        bottom: -10px;
+        @include centerAbsolute('left');
+    }
+    @include minWidth($breakpoint-468) {
+        margin: 0 51px 40px 51px;
+    }
+}
+
+h2.title {
+    @include text(32px, 2.5625rem, $icon-color);
+}
+
+h2.title-lower {
+    text-transform: none;
+}
+
+h3.title {
+    @include text(24px, 2.5625rem, $icon-color);
+}
+
+.no-border {
+    &:after {
+        border-bottom: 0;
+    }
+}

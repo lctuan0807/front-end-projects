@@ -1,0 +1,75 @@
+.product__item {
+    text-align: center;
+    .product__item--top {
+        min-height: 6.25rem;
+        padding-bottom: 2.125rem;
+    }
+    .product__item--middle {
+        margin-bottom: .9375rem;
+        min-height: 80px;
+        h3 {
+            margin-top: .625rem;
+            font-size: .875rem;
+            a {
+                color: $icon-color;
+                text-decoration: none;
+                text-transform: uppercase;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .volume {
+            @include text(.75rem, 1.0625rem, $volume-color);
+            font-weight: 500;
+        }
+    }
+    .product__item--bottom {
+        width: 100%;
+        position: relative;
+        .price {
+            display: block;
+            @include text(.875rem, 1.5rem, $icon-color);
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+        }
+        .btn-read {
+            width: 100%;
+            span {
+                cursor: pointer;
+                width: 100%;
+                margin-top: .9375rem;
+                background-color: $readmore-color;
+                display: inline-block;
+                border: 0;
+                padding: 10px 5px;
+                min-width: 7.25rem;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $icon-color;
+                transition: all .3s ease;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                -o-transition: all .3s ease;
+            }
+        }
+    }
+    &:hover {
+        .product__item--bottom {
+            .btn-read {
+                span {
+                    background-color: rgba(255, 203, 0, .5);
+                    ;
+                }
+            }
+        }
+    }
+}

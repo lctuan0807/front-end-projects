@@ -1,0 +1,23 @@
+.breadcrumb-wrapper {
+    padding-top: 20px;
+    display: none;
+    .breadcrumb {
+        background-color: transparent;
+        .breadcrumb-item {
+            text-transform: uppercase;
+            &:first-child::before {
+                content: '';
+            }
+            &::before {
+                content: '>';
+            }
+            @include text(12px, 12px, $text-color-2);
+            a {
+                color: $text-color-2;
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        display: block;
+    }
+}

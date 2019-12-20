@@ -1,0 +1,98 @@
+.bottom-footer {
+    .item {
+        .social-wrapper {
+            height: 100%;
+            display: flex;
+            padding: 15px 30px;
+            justify-content: center;
+            .social-icon {
+                height: 100%;
+                a {
+                    color: $icon-color;
+                    text-decoration: none;
+                    .icon {
+                        font-weight: 400;
+                    }
+                    .icon-facebook {
+                        &::before {
+                            @include iconBefore(1.25rem, '\EA17');
+                        }
+                    }
+                    .icon-instagram {
+                        &::before {
+                            @include iconBefore(1.25rem, '\EA26');
+                        }
+                    }
+                    .icon-youtube {
+                        &::before {
+                            @include iconBefore(1.25rem, '\EA7D');
+                        }
+                    }
+                    span {
+                        display: none;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        border-top: .0625rem solid #ccc;
+        padding: 40px 20px;
+        .item {
+            border-top: none;
+            .hint {
+                display: block !important;
+            }
+            .item-head {
+                .footer-title {
+                    height: 2.5rem;
+                    font-size: .8125rem;
+                    font-weight: 700;
+                    margin: 0;
+                    margin-bottom: 20px;
+                    line-height: 20px;
+                    font-weight: 700;
+                }
+                .icon-plus {
+                    display: none;
+                }
+            }
+            .sub {
+                display: block;
+                a {
+                    font-size: 14px;
+                    line-height: .875rem;
+                }
+            }
+            .social-wrapper {
+                flex-direction: column;
+                height: 100%;
+                display: flex;
+                padding: 0;
+                .social-icon {
+                    //width: 33.33333%;
+                    height: 100%;
+                    padding: 5px 0;
+                    a {
+                        color: $icon-color;
+                        text-decoration: none;
+                        .icon {
+                            font-weight: 400;
+                        }
+                        .icon-facebook,
+                        .icon-instagram,
+                        .icon-youtube {
+                            &::before {
+                                font-size: 16px;
+                            }
+                        }
+                        span {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

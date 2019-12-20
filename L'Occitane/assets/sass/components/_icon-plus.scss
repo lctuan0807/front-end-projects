@@ -1,0 +1,43 @@
+.icon-plus {
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    @include size(.875rem, .875rem);
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include size(.875rem, .125rem);
+        background-color: $icon-color;
+        transform: rotate(-45deg) translate(0) translateZ(0);
+        -webkit-transform: rotate(-45deg) translate(0) translateZ(0);
+        -moz-transform: rotate(-45deg) translate(0) translateZ(0);
+        -ms-transform: rotate(-45deg) translate(0) translateZ(0);
+        -o-transform: rotate(-45deg) translate(0) translateZ(0);
+    }
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include size(.875rem, .125rem);
+        background-color: $icon-color;
+        transform: rotate(45deg) translate(0) translateZ(0);
+        -webkit-transform: rotate(45deg) translate(0) translateZ(0);
+        -moz-transform: rotate(45deg) translate(0) translateZ(0);
+        -ms-transform: rotate(45deg) translate(0) translateZ(0);
+        -o-transform: rotate(45deg) translate(0) translateZ(0);
+        transition: opacity .3s ease;
+        -webkit-transition: opacity .3s ease;
+        -moz-transition: opacity .3s ease;
+        -ms-transition: opacity .3s ease;
+        -o-transition: opacity .3s ease;
+    }
+}

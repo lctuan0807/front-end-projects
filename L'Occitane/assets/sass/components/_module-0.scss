@@ -1,0 +1,61 @@
+.module-0 {
+    position: relative;
+    margin-bottom: 300px;
+    display: block;
+    a {
+        img {
+            width: 100%;
+        }
+    }
+    .full-size-block {
+        width: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        .content {
+            padding: 72% 4.375rem 10%;
+            z-index: 10;
+            background-color: transparent;
+            &::before {
+                z-index: 11;
+            }
+            &::after {
+                z-index: 11;
+            }
+            h3 {
+                a {
+                    text-transform: uppercase;
+                    @include text(24px, 2rem, $icon-color);
+                }
+            }
+            p {
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: 300;
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        margin: 0 100px;
+        .full-size-block {
+            z-index: 10;
+            bottom: 4%;
+            right: 6%;
+            width: 22%;
+            top: unset;
+            left: unset;
+            .content {
+                padding: 18% 12%;
+                background-color: #fff;
+                h3 {
+                    a {
+                        font-size: 1.875rem;
+                        line-height: 2.375rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}

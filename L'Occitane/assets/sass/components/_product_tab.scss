@@ -1,0 +1,109 @@
+.product__tab {
+    padding: 20px 0 0;
+    .tab-mobile {
+        .product__tab--title {
+            position: relative;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 18px;
+            border-top: 1px solid #ccc;
+            padding: 15px 0;
+            margin: 0;
+            cursor: pointer;
+            &:after {
+                content: '+';
+                position: absolute;
+                top: 10px;
+                right: 0;
+                font-size: 24px;
+            }
+            &:focus {
+                background-color: rgba(9, 207, 221, 0.4);
+            }
+            &-active {
+                &::after {
+                    top: 0;
+                    right: 2px;
+                    content: '-';
+                    font-size: 32px;
+                }
+            }
+        }
+        .product__tab--description {
+            display: none;
+            font-size: 14px;
+            padding: 10px 0;
+            &-active {
+                display: block !important;
+            }
+            a {
+                color: $text-color-1;
+            }
+        }
+    }
+    .tab-desktop {
+        display: none;
+        width: 100%;
+        ul {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            border-bottom: none;
+            li {
+                width: 33.3333%;
+                position: relative;
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $text-color-1;
+                    width: 100%;
+                    display: block;
+                    padding: 10px 0;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+                .active {
+                    background-color: #ddd;
+                }
+            }
+        }
+        .tab-content {
+            width: 90%;
+            margin: 0 auto;
+            .active {
+                display: block !important;
+            }
+            .tab-panel {
+                display: none;
+                background-repeat: no-repeat;
+                min-height: 535px;
+                position: relative;
+                .content {
+                    width: 70%;
+                    @extend %centerBoth;
+                    a {
+                        color: $text-color-1;
+                        position: relative;
+                        z-index: 1000;
+                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        width: 100%;
+        display: flex;
+        position: relative;
+        .tab-mobile {
+            display: none;
+        }
+        .tab-desktop {
+            display: block;
+        }
+    }
+}

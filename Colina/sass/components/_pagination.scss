@@ -1,0 +1,27 @@
+.pagination {
+    float: right;
+    text-align: center;
+    a {
+        display: block;
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        -webkit-transition: background-color .3s;
+        -moz-transition: background-color .3s;
+        -ms-transition: background-color .3s;
+        -o-transition: background-color .3s;
+        &:hover:not(.active) {
+            background-color: #ddd;
+        }
+    }
+    a.active {
+        background-color: $btn-main-bg-color;
+        color: white;
+    }
+    @media (max-width:767px) {
+        float: none;
+        @include centerAbsolute('left');
+    }
+}

@@ -1,0 +1,22 @@
+.module4__item {
+    .module4__item--image {
+        display: block;
+        margin: 0 auto;
+    }
+    .module4__item--content {
+        padding: 1.5625rem 1.25rem 0;
+        .title {
+            margin: 0 0 1.25rem 0;
+            line-height: 2rem;
+            width: 100%;
+            padding: 0;
+            &:after {
+                border-bottom: none;
+            }
+        }
+        p {
+            margin-bottom: 1.25rem;
+            @include text(.875rem, 1.1875rem, $icon-color);
+        }
+    }
+}

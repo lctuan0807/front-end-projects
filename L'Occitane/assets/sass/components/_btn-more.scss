@@ -1,0 +1,20 @@
+.btn-more {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        background-color: #ccc;
+        @include text(13px, 14px, $text-color-1);
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+}

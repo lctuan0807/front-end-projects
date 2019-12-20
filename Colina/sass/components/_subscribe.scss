@@ -1,0 +1,95 @@
+/* ================== SUBSCRIBE SECTION ================ */
+
+.subscribe,
+{
+    background-image: url(../images/contact.png);
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 142px 0;
+    position: relative;
+    background-color: $btn-main-bg-color;
+    z-index: 999;
+    .box {
+        max-width: 500px;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            top: 50%;
+            left: 50%;
+            background-color: $btn-main-bg-color;
+            opacity: .5;
+            z-index: -1;
+            box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+        }
+        .title {
+            font-family: $font-family-2;
+        }
+        .text {
+            font-weight: 300;
+        }
+        .form-subscribe {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            input {
+                display: block;
+                width: 100%;
+                height: 46px;
+                padding: 12px 18px;
+                @include text(14px, 1.42857, 1px, #555);
+                background-color: #fff;
+                border: 1px solid #ccc;
+                &:focus {
+                    outline: none;
+                }
+                z-index: 100;
+            }
+            .btn-subs {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translate(-50%, -50%);
+                background-color: $btn-main-bg-color;
+                border: 1px solid $btn-main-bg-color;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                cursor: pointer;
+                z-index: 999;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    /* ================== SUBSCRIBE SECTION ================ */
+    .subscribe {
+        .box {
+            &::after {
+                width: 300px;
+                height: 300px;
+            }
+            .form-subscribe {
+                max-width: 300px;
+            }
+            .title {
+                font-size: 23px;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}

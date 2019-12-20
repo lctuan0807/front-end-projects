@@ -1,0 +1,52 @@
+.gallery-detail {
+    padding: 100px 0;
+    position: relative;
+    .gallery-detail__image {
+        .gallery-detail__image--wrap {
+            margin-bottom: 20px;
+            position: relative;
+            min-height: 252px;
+            cursor: pointer;
+            img {
+                width: 100%;
+                min-height: 252px;
+                object-fit: cover;
+            }
+            .icon {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $btn-main-bg-color;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                transition: all .5s ease;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                i {
+                    @include centerAbsolute('both');
+                    font-size: 40px;
+                    z-index: 9;
+                    position: absolute;
+                    color: #000;
+                }
+            }
+            &:hover {
+                .icon {
+                    opacity: .7;
+                    transition: all .5s ease;
+                    -webkit-transition: all .5s ease;
+                    -moz-transition: all .5s ease;
+                    -ms-transition: all .5s ease;
+                    -o-transition: all .5s ease;
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+/* ================== FORM BOOKING ================ */
+
+#booking-modal {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                .booking-form {
+                    padding: 50px 20px;
+                    .form-group {
+                        position: relative;
+                        margin-bottom: 30px;
+                        .form-control {
+                            background-color: #ebecee;
+                            border-radius: 4px;
+                            border: none;
+                            height: 40px;
+                            box-shadow: none;
+                            color: #3e385c;
+                            font-size: 14px;
+                            &::placeholder {
+                                color: rgba(62, 72, 92, .3);
+                            }
+                        }
+                        .select-arrow {
+                            position: absolute;
+                            right: 0;
+                            bottom: 4px;
+                            width: 32px;
+                            line-height: 2px;
+                            text-align: center;
+                            color: rgba(62, 72, 92, .3);
+                        }
+                        .form-label {
+                            display: inline-block;
+                            color: #3e485c;
+                            font-weight: 700;
+                            margin-bottom: 6px;
+                            margin-left: 7px;
+                        }
+                    }
+                    .submit-btn {
+                        display: inline-block;
+                        color: #fff;
+                        background-color: $btn-main-bg-color;
+                        font-weight: 700;
+                        padding: 14px 30px;
+                        border-radius: 4px;
+                        border: none;
+                        transition: all .2s;
+                        -webkit-transition: all .2s;
+                        -moz-transition: all .2s;
+                        -ms-transition: all .2s;
+                        -o-transition: all .2s;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                        &:hover {
+                            opacity: .9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

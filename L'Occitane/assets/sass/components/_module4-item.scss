@@ -1,0 +1,36 @@
+.module4__item {
+    .module4__item--image {
+        display: block;
+        margin: 0 auto;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+    }
+    .module4__item--content {
+        padding: 1.5625rem 1.25rem 0;
+        .title {
+            margin: 0 0 1.25rem 0;
+            line-height: 2rem;
+            width: 100%;
+            padding: 0;
+            &:after {
+                border-bottom: none;
+            }
+        }
+        p {
+            margin-bottom: 20px;
+            @include text(16px, 25px, $icon-color);
+        }
+    }
+    &:hover {
+        .module4__item--image {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+        }
+    }
+}

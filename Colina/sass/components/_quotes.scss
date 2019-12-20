@@ -1,0 +1,90 @@
+/* ================== QUOTES SECTION ================ */
+
+.quotes {
+    background-image: url('../images/header-1.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: #006a9f;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .1;
+    }
+    .section-header {
+        text-align: center;
+        .title {
+            margin-bottom: 5px;
+            @include text(29px,
+            1.3,
+            0px,
+            #fff);
+            font-family: $font-family-2;
+            text-transform: uppercase;
+            position: relative;
+        }
+        p {
+            @include text(15px,
+            1.5,
+            0px,
+            #fff);
+            font-weight: 300;
+        }
+    }
+    .quotes-slide {
+        padding: 30px 10px;
+        .slide-item {
+            color: #fff;
+            .quote {
+                text-align: center;
+                .text {
+                    h4 {
+                        margin-bottom: 10px;
+                        font-size: 21px;
+                        font-family: $font-family-2;
+                    }
+                    p {
+                        font-weight: 300;
+                        margin-bottom: 10px;
+                    }
+                }
+                .more {
+                    .rating {
+                        text-align: center;
+                        padding: 15px;
+                        i {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .quotes {
+        padding: 35px 0;
+    }
+}
+
+@media (max-width:767px) {
+    .quotes {
+        .quotes-slide {
+            .slick-prev {
+                left: -10px;
+            }
+            .slick-next {
+                right: -10px;
+            }
+        }
+    }
+}

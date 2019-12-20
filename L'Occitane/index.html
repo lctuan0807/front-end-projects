@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L'Occitane</title>
+    <meta name="description" content=" L'Occitane - Hãng mỹ phẩm được vinh danh nhờ nguyên liệu tự nhiên" />
+    <meta name="keywords" content="mỹ phẩm, L'Occitane, nguyên liệu tự nhiên" />
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="name">
+    <meta name="copyright" content="company name">
+    <!-- Open Graph Meta -->
+    <meta name="og:title" content="Hãng mỹ phẩm được vinh danh nhờ nguyên liệu tự nhiên" />
+    <meta name="og:type" content="article" />
+    <meta name="og:url" content="http://demo.sweetsoft.net/training/colina/index.html" />
+    <meta name="og:image" content="http://demo.sweetsoft.net/training/colina/images/slide-2.jpg" />
+    <meta name="og:site_name" content="L'Occitane" />
+    <meta name="og:description" content="Hãng mỹ phẩm được vinh danh nhờ nguyên liệu tự nhiên" />
+    <!-- Twitter Meta -->
+    <meta name="twitter.card" content="summary">
+    <meta name="twitter.image" content="http://demo.sweetsoft.net/training/colina/images/slide-2.jpg">
+    <meta name="twitter.title" content="Hãng mỹ phẩm được vinh danh nhờ nguyên liệu tự nhiên">
+    <meta name="twitter.description" content="Hãng mỹ phẩm được vinh danh nhờ nguyên liệu tự nhiên">
+    <meta name="twitter:site" content="CL'Occitaneolina">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- Slick -->
+    <link rel="stylesheet" href="./assets/slick/slick.min.css">
+    <link rel="stylesheet" href=".//assets/slick/slick-theme.min.css">
+    <!-- Magnify -->
+    <link rel="stylesheet" href="./assets/magnify/css/magnify.css">
+    <!-- Range Slider -->
+    <link rel="stylesheet" href="./assets/rangeSlider/rangeSlider.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
+    <!-- JQuery -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="htmlHeader"></div>
+    <!-- Content -->
+    <div class="htmlContent"></div>
+    <!-- Footer -->
+    <div class="htmlFooter"></div>
+    <div class="overlay"></div>
+    <script>
+        $('.htmlHeader').load('./htmls/header.html');
+
+        function getUrlParameter() {
+            var listPage = ['home', 'bo-suu-tap', 'cham-soc-da', 'tam-goi-duong-the', 'nuoc-hoa', 'cho-nam', 'nhan-hang', 'qua-tang', 'duong-am', 'dau-duong-lam-diu-da'];
+            var sPageURL = window.location.search.substring(1);
+            if (sPageURL === '') {
+                window.history.pushState("", "", '/?page=home');
+            }
+            var vars = sPageURL.split();
+            for (var i = 0; i < vars.length; i++) {
+                var sParameterName = vars[i].split('=');
+                for (var j = 0; j < listPage.length; j++) {
+                    if (sParameterName[1] === listPage[j]) {
+                        $('.htmlContent').load('./htmls/' + sParameterName[1] + '.html');
+                        window.history.pushState("", "", '/?page=' + sParameterName[1] + '');
+                        document.title = sParameterName[1].charAt(0).toUpperCase() + sParameterName[1].slice(1)
+                        break;
+                    } else {
+                        $('.htmlContent').load('./htmls/home.html');
+                        window.history.pushState("", "", '/?page=home');
+                    }
+                }
+            }
+        }
+        getUrlParameter();
+        setTimeout(function() {
+            $('.htmlFooter').load('./htmls/footer.html')
+        }, 500)
+    </script>
+</body>
+
+</html>

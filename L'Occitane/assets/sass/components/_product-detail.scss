@@ -1,0 +1,216 @@
+.product-detail-block {
+    padding: 20px 0;
+    .product__info {
+        &--slide {
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+            .main-slide {
+                img {
+                    width: 70%;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            .sub-slide {
+                display: none;
+                img {
+                    width: 10%;
+                }
+            }
+        }
+        &--desc {
+            h2 {
+                display: none;
+            }
+            .short-desc {
+                font-size: 14px;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .made-in {
+                background-color: #ddd;
+                text-align: center;
+                padding: 10px 0;
+                margin-bottom: 25px;
+                img {
+                    width: 5%;
+                }
+                span {
+                    font-size: 13px;
+                    font-weight: 600;
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &--cart {
+            .content {
+                padding: 30px 10px;
+                &::before,
+                &:after {
+                    border: 0;
+                    z-index: -1;
+                }
+                .cart-label {
+                    display: none;
+                    border-bottom: 1px solid #ccc;
+                    margin: 0 50px;
+                    position: relative;
+                    z-index: 20;
+                    span {
+                        &:nth-child(1) {
+                            float: left;
+                        }
+                        &:nth-child(2) {
+                            float: right;
+                        }
+                    }
+                }
+                .product-price {
+                    padding: 20px 0 30px;
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+                .cart-info {
+                    margin: 0 40px;
+                    li {
+                        text-align: center;
+                        .icon-time {
+                            &::before {
+                                @include iconBefore(20px, '\EA6E');
+                            }
+                        }
+                        .icon-heart {
+                            &::before {
+                                @include iconBefore(20px, '\EA1A');
+                            }
+                        }
+                        .icon-share {
+                            &::before {
+                                @include iconBefore(20px, '\EA61');
+                            }
+                        }
+                        p {
+                            text-align: left;
+                            a {
+                                color: $text-color-1;
+                                font-size: 14px;
+                            }
+                        }
+                        span {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include minWidth($breakpoint-992) {
+    .product-detail-block {
+        position: relative;
+        height: 60vh;
+        h2 {
+            display: none;
+        }
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 40%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: $bg-color-yellow;
+        }
+        .product__info {
+            &--slide {
+                width: 40%;
+                margin: 0 auto;
+                position: absolute;
+                top: 80px;
+                left: 30%;
+                .magnify {
+                    width: 100%;
+                    position: absolute;
+                    img {
+                        width: 100%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+                .main-slide {
+                    img {
+                        width: 100%;
+                    }
+                }
+                .sub-slide {
+                    display: block;
+                    img {
+                        width: 70px !important;
+                        border: 1px solid #ddd;
+                        margin: 0 5px;
+                    }
+                }
+            }
+            &--desc {
+                position: absolute;
+                top: 40%;
+                padding: 20px;
+                width: 30%;
+                h2 {
+                    text-align: left;
+                    display: block;
+                    margin: 0;
+                    font-weight: 300;
+                    font-size: 28px;
+                    padding: 0;
+                }
+                .short-desc {
+                    text-align: left;
+                }
+                .made-in {
+                    background-color: transparent;
+                    text-align: left;
+                    padding: 10px 0;
+                    margin-bottom: 0;
+                    width: 35%;
+                    img {
+                        width: 30%;
+                    }
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        br {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &--cart {
+                width: 30%;
+                position: absolute;
+                top: 10%;
+                right: 3%;
+                .content {
+                    &::before,
+                    &:after {
+                        border: .1875rem solid $border-top-color;
+                        z-index: 2;
+                    }
+                    .cart-label {
+                        display: block;
+                    }
+                    .cart-info {
+                        position: relative;
+                        z-index: 20;
+                    }
+                }
+            }
+        }
+    }
+}

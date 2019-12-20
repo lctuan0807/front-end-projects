@@ -1,0 +1,20 @@
+.footer__link {
+    display: none;
+    border-top: 1px solid #ccc;
+    padding: 30px 0 20px;
+    ul {
+        text-align: center;
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 5px;
+            a {
+                @include text(12px, 1.3rem, $text-color-2);
+                font-weight: 600;
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        display: block;
+    }
+}

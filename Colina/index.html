@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colina - Hotel, Resort & Accommodation Website Template</title>
+    <meta name="description" content="Colina - Hotel, Resort & Accommodation Website Template, Colina, Hotel, Resort, Accomodation, Apartment, Luxury, parking, booking" />
+    <meta name="keywords" content="Colina, Hotel, Resort, Accomodation, Apartment, Luxury, parking, booking" />
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="name">
+    <meta name="copyright" content="company name">
+    <!-- Open Graph Meta -->
+    <meta name="og:title" content="Colina - Hotel, Resort & Accommodation Website Template" />
+    <meta name="og:type" content="article" />
+    <meta name="og:url" content="http://demo.sweetsoft.net/training/colina/index.html" />
+    <meta name="og:image" content="http://demo.sweetsoft.net/training/colina/images/slide-2.jpg" />
+    <meta name="og:site_name" content="Colina" />
+    <meta name="og:description" content="Colina - Hotel, Resort & Accommodation Website Template" />
+    <!-- Twitter Meta -->
+    <meta name="twitter.card" content="summary">
+    <meta name="twitter.image" content="http://demo.sweetsoft.net/training/colina/images/slide-2.jpg">
+    <meta name="twitter.title" content="Colina - Hotel, Resort & Accommodation Website Template">
+    <meta name="twitter.description" content="Colina - Hotel, Resort & Accommodation Website Template">
+    <meta name="twitter:site" content="Colina">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./slick/slick.min.css">
+    <link rel="stylesheet" href="./slick/slick-theme.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="./css/lightgallery.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <!-- JS -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153156660-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-153156660-1');
+    </script>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Preloading -->
+    <div class="preloading">
+        <img src="./images/giphy.gif" alt="Loading" title="Loading Page">
+    </div>
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <div id="htmlHeader"></div>
+        <!-- Content -->
+        <div id="htmlContent"></div>
+        <!-- Footer -->
+        <div id="htmlFooter"></div>
+        <!-- Scroll To Top -->
+        <div class="scroll-top" id="toTop">
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <script>
+        $('.preloading').addClass('preloader-site');
+        $(window).load(function() {
+                window.setTimeout(function() {
+                    $('.loading').fadeOut();
+                    $('.preloading').removeClass('preloader-site').addClass('loaded');
+                }, 500)
+            })
+            //Add content to page
+        $('#htmlHeader').load('./pages/header.html');
+
+        function getUrlParameter() {
+            var listPage = ['home', 'gallery', 'gallery-detail', 'contact', 'blog-item'];
+            var sPageURL = window.location.search.substring(1);
+            if (sPageURL === '') {
+                window.history.pushState("", "", '/?page=home');
+            }
+            var vars = sPageURL.split();
+            for (var i = 0; i < vars.length; i++) {
+                var sParameterName = vars[i].split('=');
+                for (var j = 0; j < listPage.length; j++) {
+                    if (sParameterName[1] === listPage[j]) {
+                        $('#htmlContent').load('./pages/' + sParameterName[1] + '.html');
+                        window.history.pushState("", "", '/?page=' + sParameterName[1] + '');
+                        document.title = sParameterName[1].charAt(0).toUpperCase() + sParameterName[1].slice(1) + " | Colina - Hotel, Resort & Accommodation Website Template"
+                        break;
+                    } else {
+                        $('#htmlContent').load('./pages/home.html');
+                        window.history.pushState("", "", '/?page=home');
+                    }
+                }
+            }
+        }
+        getUrlParameter();
+        // function getUrlParameter(name) {
+        //     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        //     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        //     var results = regex.exec(location.search);
+        //     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        // };
+        setTimeout(function() {
+            $('#htmlFooter').load('./pages/footer.html')
+        }, 500)
+    </script>
+</body>
+
+</html>

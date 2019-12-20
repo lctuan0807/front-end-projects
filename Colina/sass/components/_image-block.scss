@@ -1,0 +1,264 @@
+/* ================== IMAGE BLOCKS SECTION ================ */
+
+.image-blocks {
+    .section-header {
+        @extend %section-header;
+        min-height: 400px;
+        padding-top: 100px;
+        margin-bottom: -180px;
+        background-image: url('../images/header-1.jpg');
+        .title {
+            color: #fff;
+            position: relative;
+        }
+        p {
+            color: #fff;
+        }
+        .title {
+            .btn-clean-dark {
+                color: #fff;
+                border-color: #fff;
+                &:hover {
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+    padding-bottom: 100px;
+    .block-left {
+        .item {
+            order: 2;
+        }
+        .image {
+            order: 1;
+            background-image: url('../images/apartment-1.jpg');
+        }
+    }
+    .block-right {
+        .item {
+            order: 1;
+        }
+        .image {
+            order: 2;
+            background-image: url('../images/apartment-2.jpg');
+        }
+    }
+    .blocks {
+        position: relative;
+        display: flex;
+        width: 100%;
+        .item {
+            position: relative;
+            width: 50%;
+            padding: 0 50px;
+            z-index: 9;
+            background-color: #eee;
+            .text {
+                padding: 70px 0;
+                .title {
+                    margin-bottom: 29px;
+                    @include text(29px,
+                    1.3,
+                    0px,
+                    #000);
+                    font-family: $font-family-2;
+                    font-weight: 500;
+                }
+                p {
+                    display: block;
+                    display: -webkit-box;
+                    @include text(14px,
+                    1.42857143,
+                    0px,
+                    #000);
+                    max-height: (14px * 1.42857143 * 3);
+                    margin: 0 0 10px;
+                    font-weight: 300;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    @media screen and (min--moz-device-pixel-ratio: 0), screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+                        overflow: hidden;
+                        position: relative;
+                        &:before {
+                            background: transparent;
+                            bottom: 0;
+                            position: absolute;
+                            right: 0;
+                            float: left;
+                            content: '\2026';
+                            margin-left: -3rem;
+                            width: 10px;
+                        }
+                        &:after {
+                            content: '';
+                            background: transparent;
+                            position: absolute;
+                            height: 50px;
+                            width: 100%;
+                            z-index: 1;
+                        }
+                    }
+                }
+                .room-facilities {
+                    text-align: center;
+                    margin: 40px 0;
+                    padding: 15px 0;
+                    border-top: 1px solid $room-facilities-border-color;
+                    border-bottom: 1px solid $room-facilities-border-color;
+                    figure {
+                        margin: 0;
+                        display: inline-block;
+                        padding-right: 10px;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                        figcaption {
+                            font-size: 120%;
+                            p {
+                                font-size: 11.25px;
+                                padding-top: 5px;
+                                font-weight: 300;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                .book {
+                    display: flex;
+                    width: 100%;
+                    .left {
+                        padding-right: 15px;
+                        .btn {
+                            text-transform: uppercase;
+                            border-radius: 2px;
+                            font-weight: 300;
+                            text-align: center;
+                            border: 1px solid $image-blocks-border-btn-color;
+                            padding: 12px 18px;
+                            white-space: nowrap;
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 14px 20px;
+                            cursor: pointer;
+                            @include text(18px,
+                            1.3333,
+                            0px,
+                            #fff);
+                            transition: all .3s ease;
+                            -webkit-transition: all .3s ease;
+                            -moz-transition: all .3s ease;
+                            -ms-transition: all .3s ease;
+                            -o-transition: all .3s ease;
+                        }
+                        .btn-main {
+                            background-color: $image-blocks-btn-color;
+                            &:hover {
+                                background-color: $image-blocks-btn-hover-color;
+                                border-color: $image-blocks-border-btn-hover-color;
+                            }
+                        }
+                    }
+                    .right {
+                        text-align: left;
+                        padding-left: 15px;
+                        .price {
+                            @include text(29px,
+                            1.3,
+                            0px,
+                            inherit);
+                            font-weight: 300;
+                        }
+                        span {
+                            font-weight: 300;
+                            @include text(70%,
+                            1.5,
+                            0px,
+                            #222);
+                            display: block;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .image {
+            width: 50%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            background-color: #006a9f;
+            color: #fff;
+            img {
+                display: none;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    /* ========== IMAGE BLOCKS ========= */
+    .image-blocks {
+        padding-bottom: 35px;
+        .section-header {
+            padding-top: 40px;
+            margin-bottom: -130px;
+            min-height: 250px;
+        }
+        .blocks {
+            .item {
+                .text {
+                    .room-facilities {
+                        white-space: nowrap;
+                        overflow-x: scroll;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    /* ================== IMAGE BLOCKS SECTION ================ */
+    .image-blocks {
+        .block-left,
+        .block-right {
+            .item {
+                order: 2;
+            }
+            .image {
+                order: 1;
+            }
+        }
+        .blocks {
+            flex-direction: column;
+            margin: 20px 0;
+            .item {
+                width: 100%;
+                padding: 0;
+                .text {
+                    padding: 20px;
+                    .title {
+                        font-size: 23px;
+                    }
+                    p {
+                        font-size: 13px;
+                        font-weight: 300;
+                        display: block;
+                    }
+                }
+            }
+            .image {
+                width: 100%;
+                img {
+                    width: 100%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

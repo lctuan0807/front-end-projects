@@ -1,0 +1,17 @@
+.breadcrumb-wrap {
+    .breadcrumb {
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        .breadcrumb-item {
+            a {
+                text-decoration: none;
+                @include text(18px, 1.5, 0px, #fff);
+                font-family: $font-family-2;
+                &:hover {
+                    color: $slide-span-title-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+ /* ================== HEADER SECTION ================ */
+ 
+ .sticky {
+     background-color: $btn-main-bg-color;
+     border-color: transparent;
+     transition: display .3s ease;
+     -webkit-transition: display .3s ease;
+     -moz-transition: display .3s ease;
+     -ms-transition: display .3s ease;
+     -o-transition: display .3s ease;
+     .nav-top {
+         display: none;
+         transition: display .3s ease;
+         -moz-transition: display .3s ease;
+         -ms-transition: display .3s ease;
+         -o-transition: display .3s ease;
+         -webkit-transition: display .3s ease;
+     }
+     .nav-main {
+         padding-top: 25px;
+         .logo {
+             width: 90px;
+             height: 90px;
+             border-radius: 100%;
+             border: 1px solid $btn-main-bg-color;
+             background-color: $btn-main-bg-color;
+             position: absolute;
+             top: 10px;
+             left: 50%;
+             box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+             transition: all .3s ease;
+             -webkit-transition: all .3s ease;
+             -moz-transition: all .3s ease;
+             -ms-transition: all .3s ease;
+             -o-transition: all .3s ease;
+         }
+     }
+ }
+ 
+ header {
+     position: fixed;
+     width: auto;
+     left: 0;
+     right: 0;
+     display: block;
+     z-index: 1000;
+     border-bottom: 1px solid rgba(255, 255, 255, .1);
+ }

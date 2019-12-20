@@ -1,0 +1,200 @@
+aside {
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    background-color: #eee;
+    .box {
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+        position: relative;
+        .title {
+            padding-top: 8px;
+            margin-bottom: 15px;
+            @include text(21px, 1.3, 1px, #000);
+            font-family: $font-family-2;
+            font-weight: 300;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                margin-left: 20px;
+                transition: all .3s ease;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                a {
+                    @include text(15px, 1.5, 0px, #000);
+                    display: block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #eaeaea;
+                    text-decoration: none;
+                    font-weight: 300;
+                }
+                &:hover {
+                    transform: translateX(10px);
+                    -webkit-transform: translateX(10px);
+                    -moz-transform: translateX(10px);
+                    -ms-transform: translateX(10px);
+                    -o-transform: translateX(10px);
+                }
+            }
+            li.active {
+                list-style: disc;
+                a {
+                    color: #00486c;
+                }
+            }
+        }
+    }
+    .search-box {
+        padding: 0;
+        margin: 0 auto;
+        position: relative;
+        input {
+            display: block;
+            width: 100%;
+            height: 46px;
+            padding: 12px 18px;
+            @include text(14px, 1.42857, 1px, #555);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            &:focus {
+                outline: none;
+            }
+            z-index: 100;
+        }
+        .btn-subs {
+            background-color: $btn-main-bg-color;
+            border: 1px solid $btn-main-bg-color;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            color: #fff;
+            cursor: pointer;
+            @include centerAbsolute('right');
+            top: 50%;
+            right: 10px;
+        }
+    }
+    .booking-blog {
+        margin-top: 0;
+        background-color: $btn-main-bg-color;
+        padding: 20px;
+        h5 {
+            @include text(15px, 1.3, 0px, #fff);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .booking-wrapper {
+            padding: 0;
+            .date {
+                p {
+                    font-size: 14px;
+                }
+                .date-value {
+                    .day {
+                        font-size: 50px;
+                    }
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+            .btn {
+                margin-top: 15px;
+                font-size: 100%;
+            }
+        }
+    }
+    .categories-box {
+        ul {
+            li {
+                list-style: circle;
+            }
+            li.active {
+                list-style: disc;
+                a {
+                    color: #00486c;
+                }
+            }
+        }
+    }
+    .posts-box {
+        ul {
+            li {
+                list-style: none;
+                margin-left: 0;
+                a {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    .date {
+                        min-width: 40px;
+                        text-align: center;
+                        line-height: 1.3;
+                        span {
+                            &:nth-child(1) {
+                                font-size: 75%;
+                            }
+                            &:nth-child(2) {
+                                display: block;
+                                font-weight: 500;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .text {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .tags-box {
+        ul {
+            li {
+                list-style: none;
+                display: block;
+                float: left;
+                margin: 0 2px 2px 0;
+                a {
+                    background-color: $btn-main-bg-color;
+                    color: #fff;
+                    padding: 7.5px;
+                    font-size: 13px;
+                    border-radius: 2px;
+                    -webkit-border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    -ms-border-radius: 2px;
+                    -o-border-radius: 2px;
+                    transition: all .3s ease;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                }
+                &:hover {
+                    transform: unset;
+                    -webkit-transform: unset;
+                    -moz-transform: unset;
+                    -ms-transform: unset;
+                    -o-transform: unset;
+                    a {
+                        background-color: $btn-main-bg-color-hover;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        margin-top: 20px;
+    }
+    @media (max-width:468px) {
+        .posts-box {
+            a {
+                .text {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

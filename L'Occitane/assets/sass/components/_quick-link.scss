@@ -1,0 +1,73 @@
+.side__navigation--quick-link {
+    padding: 16px 0;
+    background-color: #efefef;
+    display: block;
+    .side__navigation--quick-link--list {
+        display: flex;
+        align-items: stretch;
+        flex-flow: row nowrap;
+        @include size(100%, 100%);
+        margin: 0;
+        padding: 0;
+        .list-item {
+            width: 25%;
+            list-style: none;
+            text-align: center;
+            &:not(:first-child) {
+                border-left: .0625rem solid #ccc;
+            }
+            .menu-link {
+                display: block;
+                position: relative;
+                padding: 10px;
+                height: 100%;
+                text-decoration: none;
+                color: $icon-color;
+                .icon {
+                    display: inline-block;
+                    float: none;
+                    height: auto;
+                }
+                .icon-gps {
+                    font-weight: 400;
+                    &:before {
+                        @include centerAbsolute('both');
+                        @include iconBefore(2rem, '\EA29');
+                    }
+                }
+                .icon-profile {
+                    font-weight: 400;
+                    &:before {
+                        @include centerAbsolute('both');
+                        @include iconBefore(2rem, '\EA56');
+                    }
+                }
+                .icon-heart {
+                    font-weight: 400;
+                    &:before {
+                        @include centerAbsolute('both');
+                        @include iconBefore(2rem, '\EA1A');
+                    }
+                }
+                .icon-phone {
+                    font-weight: 400;
+                    &:before {
+                        @include centerAbsolute('both');
+                        @include iconBefore(2rem, '\EA51');
+                    }
+                }
+                .nav-text {
+                    font-size: 14px;
+                    display: block;
+                    text-align: center;
+                    margin-top: 20px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        display: none;
+    }
+}

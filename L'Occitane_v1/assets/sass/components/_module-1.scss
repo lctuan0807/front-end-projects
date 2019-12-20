@@ -1,0 +1,103 @@
+.module-1 {
+    .block-desc {
+        width: 100%;
+        padding: 20px .9375rem;
+        text-align: center;
+        a {
+            @include text(.875rem, 1.1875rem, $icon-color);
+            margin: 20px 0 .9374rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        span {
+            display: block;
+            @include text(.875rem, 1.5rem, $icon-color);
+            font-weight: 800;
+        }
+    }
+    .mobile {
+        .content {
+            position: relative;
+            padding: 0;
+            .mobile-image {
+                padding: 0;
+                img {
+                    width: 100%;
+                }
+            }
+            .description {
+                padding: 1.25rem 1.875rem 7.5rem;
+                background-color: transparent;
+                h2 {
+                    margin-bottom: 20px;
+                    a {
+                        display: block;
+                        @include text(24px, 32px, $icon-color);
+                        font-weight: 500;
+                        text-decoration: none;
+                    }
+                }
+                p {
+                    margin-bottom: 20px;
+                    @include text(.875rem, 1.1875, $icon-color);
+                }
+            }
+        }
+        .block {
+            position: relative;
+            margin-top: -6.25rem;
+            img {
+                position: relative;
+                z-index: 5;
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    .desktop {
+        display: none;
+        .desktop-image {
+            width: 50%;
+        }
+        .desktop__content {
+            width: 60%;
+            margin-left: -10%;
+            .desktop__content--top {
+                background-color: transparent;
+                padding-left: 25%;
+                padding-right: 10%;
+                text-align: left;
+                margin-bottom: 1.875rem;
+                .read-more {
+                    text-align: left;
+                }
+            }
+            .desktop__content--bottom {
+                img {
+                    width: 40%;
+                    margin-top: -4.375rem;
+                    overflow: hidden;
+                    float: right;
+                    right: -16px;
+                    position: relative;
+                    z-index: 10;
+                }
+                .block-desc {
+                    text-align: left;
+                    max-width: 40%;
+                    word-wrap: normal;
+                    margin-left: 100px;
+                }
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        .mobile {
+            display: none;
+        }
+        .desktop {
+            display: flex;
+        }
+    }
+}

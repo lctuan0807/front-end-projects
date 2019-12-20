@@ -1,0 +1,21 @@
+.module-6 {
+    .module6__item {
+        .module6__item--image {
+            margin: 0 auto;
+            display: block;
+        }
+        .module6__item--content {
+            padding: 25px 20px 0;
+            text-align: center;
+            h3 {
+                text-transform: uppercase;
+                font-size: 24px;
+                margin: 0 0 20px;
+            }
+            p {
+                font-size: 14px;
+                margin: 0 0 20px;
+            }
+        }
+    }
+}

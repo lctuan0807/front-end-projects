@@ -1,0 +1,326 @@
+    .header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        display: block;
+        background-color: #fff;
+        border-bottom: .0625rem solid #ccc;
+        .header__top {
+            @include size(100%, .375rem);
+            background-color: $border-top-color;
+        }
+        .header__wrapper {
+            //height: 100px;
+            .header__left {
+                position: relative;
+                display: flex;
+                .button-none {
+                    width: 20%;
+                    height: 3.625rem;
+                    background-color: transparent;
+                    border: none;
+                    position: relative;
+                    &:focus {
+                        outline: none;
+                    }
+                    .line-bar {
+                        @include size(1.5rem, .1875rem);
+                        background-color: $icon-color;
+                        display: inline-block;
+                        @extend %centerBoth;
+                        &:before {
+                            display: block;
+                            position: absolute;
+                            content: '';
+                            @include size(1.5rem, .1875rem);
+                            background-color: $icon-color;
+                            top: -.5625rem;
+                        }
+                        &:after {
+                            display: block;
+                            position: absolute;
+                            content: '';
+                            @include size(1.5rem, .1875rem);
+                            background-color: $icon-color;
+                            bottom: -.5625rem;
+                        }
+                    }
+                    .icon-search {
+                        display: block;
+                        transition: all .3s ease;
+                        -webkit-transition: all .3s ease;
+                        -moz-transition: all .3s ease;
+                        -ms-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                        font-weight: 400;
+                        &:before {
+                            @include centerAbsolute('both');
+                            @include iconBefore(1.5rem, '\EA60');
+                        }
+                    }
+                }
+                .store-system {
+                    display: none;
+                    width: 51%;
+                    right: 0;
+                    @extend %centerVertical;
+                    a {
+                        text-transform: uppercase;
+                        @include text(12px, 1.3rem, $text-color-2);
+                        span {
+                            font-size: 0;
+                        }
+                        .icon {
+                            display: inline-block;
+                            width: 1rem;
+                            float: left;
+                            margin-left: 10px;
+                        }
+                        .icon-gps {
+                            &:before {
+                                @include iconBefore(1rem, '\EA29');
+                            }
+                        }
+                    }
+                    &::before {
+                        border-left: 1px solid $volume-color;
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: -5px;
+                        height: 100%;
+                    }
+                }
+            }
+            .header__middle {
+                align-items: center;
+                a {
+                    img {
+                        @include size(80%, 1.8rem);
+                        @extend %centerBoth;
+                    }
+                }
+            }
+            .header__right {
+                transition: all .3s ease;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                display: block;
+                position: relative;
+                @include size(100%, 100%);
+                .gps-link {
+                    text-decoration: none;
+                    color: $icon-color;
+                    .icon-gps {
+                        font-weight: 400;
+                        float: right !important;
+                        &:before {
+                            @extend %centerBoth;
+                            @include iconBefore(1.5rem, '\EA29');
+                        }
+                    }
+                }
+                ul {
+                    display: none;
+                    @extend %centerVertical;
+                }
+            }
+        }
+        .header-active {
+            .header__left {
+                .button-none {
+                    position: relative;
+                    .line-bar {
+                        position: unset;
+                        display: unset;
+                        @include size(24px, 24px);
+                        transform: rotate(90deg) translate(-50%, -50%) translateZ(0);
+                        -webkit-transform: rotate(90deg) translate(-50%, -50%) translateZ(0);
+                        -moz-transform: rotate(90deg) translate(-50%, -50%) translateZ(0);
+                        -ms-transform: rotate(90deg) translate(-50%, -50%) translateZ(0);
+                        -o-transform: rotate(90deg) translate(-50%, -50%) translateZ(0);
+                        background-color: transparent;
+                        &:before {
+                            top: 50%;
+                            left: 50%;
+                            @include size(24px, .1875rem);
+                            background-color: $icon-color;
+                            margin: -.09375rem 0 0 -.75rem;
+                            transform: rotate(-45deg) translateZ(0);
+                            -webkit-transform: rotate(-45deg) translateZ(0);
+                            -moz-transform: rotate(-45deg) translateZ(0);
+                            -ms-transform: rotate(-45deg) translateZ(0);
+                            -o-transform: rotate(-45deg) translateZ(0);
+                        }
+                        &:after {
+                            top: 50%;
+                            left: 50%;
+                            @include size(24px, .1875rem);
+                            margin: -.09375rem 0 0 -.75rem;
+                            background-color: $icon-color;
+                            transform: rotate(45deg) translateZ(0);
+                            -webkit-transform: rotate(45deg) translateZ(0);
+                            -moz-transform: rotate(45deg) translateZ(0);
+                            -ms-transform: rotate(45deg) translateZ(0);
+                            -o-transform: rotate(45deg) translateZ(0);
+                        }
+                    }
+                    .icon-search {
+                        display: none;
+                    }
+                }
+            }
+            .header__right {
+                display: none;
+            }
+        }
+        @include minWidth($breakpoint-992) {
+            border-bottom: none;
+            .header__wrapper {
+                padding: 40px 0;
+                .header__left {
+                    .button-none {
+                        display: none;
+                    }
+                    .store-system {
+                        display: block;
+                    }
+                }
+                .header__middle {
+                    a {
+                        img {
+                            width: 100%;
+                            height: 50px;
+                        }
+                    }
+                }
+                .header__right {
+                    a {
+                        .icon {
+                            display: none;
+                        }
+                    }
+                    position: relative;
+                    ul {
+                        display: flex;
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            list-style: none;
+                            margin: 0 5px;
+                            a {
+                                text-transform: uppercase;
+                                @include text(12px, 1.3rem, $text-color-2);
+                                span {
+                                    display: none;
+                                }
+                                .icon {
+                                    display: inline-block;
+                                    width: 1rem;
+                                    float: right;
+                                    margin-left: 5px;
+                                }
+                                .icon-phone {
+                                    &:before {
+                                        @include iconBefore(1rem, '\EA51');
+                                    }
+                                }
+                                .icon-profile {
+                                    &:before {
+                                        @include iconBefore(1rem, '\EA56');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                transition: padding .3s ease;
+                -webkit-transition: padding .3s ease;
+                -moz-transition: padding .3s ease;
+                -ms-transition: padding .3s ease;
+                -o-transition: padding .3s ease;
+            }
+            .header-sticky {
+                position: relative;
+                padding: 30px 0;
+                transition: all .3s ease;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                .header__left {
+                    .store-system {
+                        left: 20%;
+                        a {
+                            span {
+                                font-size: 0 !important;
+                            }
+                            .icon {
+                                float: left !important;
+                            }
+                        }
+                    }
+                }
+                .header__middle {
+                    a {
+                        img {
+                            width: 60%;
+                            height: 30px;
+                        }
+                    }
+                }
+                .header__right {
+                    ul {
+                        transform: translate(150px, -50%);
+                        -webkit-transform: translate(150px, -50%);
+                        -moz-transform: translate(150px, -50%);
+                        -ms-transform: translate(150px, -50%);
+                        -o-transform: translate(150px, -50%);
+                        li {
+                            a {
+                                span {
+                                    display: none !important;
+                                    transition: display .3s ease;
+                                    -webkit-transition: display .3s ease;
+                                    -moz-transition: display .3s ease;
+                                    -ms-transition: display .3s ease;
+                                    -o-transition: display .3s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include minWidth(1575px) {
+            .header__wrapper {
+                .header__left {
+                    .store-system {
+                        a {
+                            span {
+                                font-size: 12px;
+                            }
+                            .icon {
+                                float: right;
+                            }
+                        }
+                    }
+                }
+                .header__right {
+                    ul {
+                        li {
+                            a {
+                                span {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

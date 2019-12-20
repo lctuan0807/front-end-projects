@@ -1,0 +1,21 @@
+.footer__copyright {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #ccc;
+    .footer__copyright--logo {
+        padding: 10px;
+        img {
+            width: 140px;
+            height: 25px;
+        }
+    }
+    .footer__copyright--text {
+        text-transform: uppercase;
+        @include text(11px, 1.625rem, $text-color-2);
+        font-weight: 600;
+    }
+    @include minWidth($breakpoint-992) {
+        display: block;
+    }
+}

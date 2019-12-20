@@ -1,0 +1,75 @@
+.product-sort-wrap {
+    display: flex;
+    width: 100%;
+    .box {
+        width: 45%;
+        margin: 0 2.5%;
+        position: relative;
+        .sort-select {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid $text-color-2;
+            padding: 8px 26px 8px 8px;
+            text-align: left;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .icon-arrow-down {
+            position: absolute;
+            right: 12px;
+            top: 0;
+            width: 15px;
+            height: 64%;
+            display: inline-block;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            &::before,
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                left: 50%;
+                top: 0;
+                width: 10px;
+                height: 2px;
+                background-color: $icon-color;
+                transform-origin: 0 0;
+            }
+            &::before {
+                transform: rotate(-45deg) translate(-100%) translateZ(0);
+                -webkit-transform: rotate(-45deg) translate(-100%) translateZ(0);
+                -moz-transform: rotate(-45deg) translate(-100%) translateZ(0);
+                -ms-transform: rotate(-45deg) translate(-100%) translateZ(0);
+                -o-transform: rotate(-45deg) translate(-100%) translateZ(0);
+            }
+            &::after {
+                transform: rotate(45deg) translate(0) translateZ(0);
+                -webkit-transform: rotate(45deg) translate(0) translateZ(0);
+                -moz-transform: rotate(45deg) translate(0) translateZ(0);
+                -ms-transform: rotate(45deg) translate(0) translateZ(0);
+                -o-transform: rotate(45deg) translate(0) translateZ(0);
+            }
+        }
+    }
+    @include minWidth($breakpoint-992) {
+        .sort {
+            display: none;
+        }
+        .filter {
+            width: 100%;
+            .sort-select {
+                display: none;
+            }
+            .icon-arrow-down {
+                display: none;
+            }
+        }
+    }
+}

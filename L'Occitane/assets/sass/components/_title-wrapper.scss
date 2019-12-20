@@ -1,0 +1,15 @@
+.title-wrapper {
+    text-align: center;
+    padding: 20px 10px;
+    h1.title {
+        @include text(24px, 32px, $icon-color);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    h1.title-lower {
+        text-transform: none;
+    }
+    .title-desc {
+        font-size: 16px;
+    }
+}
